@@ -1,0 +1,48 @@
+# Build results
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Bb]uild/
+**/[Bb]in/
+**/[Oo]bj/
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Test results
+TestResults/
+*.trx
+
+# ASP.NET / .NET generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / local settings
+appsettings.Development.local.json
+secrets.json
+
+# Misc
+*.tmp
+*.temp
