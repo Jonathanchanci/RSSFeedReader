@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\RSSFeedReader.Api.props" />
-</Project>

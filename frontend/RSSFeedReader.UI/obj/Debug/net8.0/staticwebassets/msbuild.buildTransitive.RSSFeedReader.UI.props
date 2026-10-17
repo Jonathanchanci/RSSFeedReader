@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\RSSFeedReader.UI.props" />
-</Project>
