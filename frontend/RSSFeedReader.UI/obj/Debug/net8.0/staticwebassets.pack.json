@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\obj\\Debug\\net8.0\\compressed\\49j9j6p27h.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\RSSFeedReader.UI.styles.css",
+      "PackagePath": "staticwebassets\\RSSFeedReader.UI.styles.css"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "G:\\Documents\\JONATHAN\\Proyectos\\RSSFeedReader\\frontend\\RSSFeedReader.UI\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RSSFeedReader.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.RSSFeedReader.UI.props",
+      "PackagePath": "build\\RSSFeedReader.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RSSFeedReader.UI.props",
+      "PackagePath": "buildMultiTargeting\\RSSFeedReader.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.RSSFeedReader.UI.props",
+      "PackagePath": "buildTransitive\\RSSFeedReader.UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

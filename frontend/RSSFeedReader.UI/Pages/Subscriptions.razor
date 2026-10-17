@@ -1,0 +1,90 @@
+@page "/"
+@using RSSFeedReader.UI.Models
+@using RSSFeedReader.UI.Services
+@inject SubscriptionApiClient SubscriptionApiClient
+
+<PageTitle>Subscriptions</PageTitle>
+
+<h1>RSS Subscriptions</h1>
+
+<EditForm Model="@_formModel" OnSubmit="HandleSubmit">
+    <div class="input-group mb-3">
+        <InputText @bind-Value="_formModel.Url" class="form-control" placeholder="Enter a feed URL" />
+        <button type="submit" class="btn btn-primary" disabled="@_isSubmitting">Add</button>
+    </div>
+</EditForm>
+
+@if (!string.IsNullOrWhiteSpace(_errorMessage))
+{
+    <div class="alert alert-warning" role="alert">@_errorMessage</div>
+}
+
+@if (_subscriptions.Count == 0)
+{
+    <p>No subscriptions yet.</p>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var subscription in _subscriptions)
+        {
+            <li class="list-group-item">@subscription.Url</li>
+        }
+    </ul>
+}
+
+@code {
+    private readonly FormModel _formModel = new();
+    private readonly List<Subscription> _subscriptions = new();
+    private bool _isSubmitting;
+    private string? _errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSubscriptionsAsync();
+    }
+
+    private async Task HandleSubmit(EditContext editContext)
+    {
+        _errorMessage = null;
+
+        if (string.IsNullOrWhiteSpace(_formModel.Url))
+        {
+            _errorMessage = "Please enter a nonblank URL.";
+            return;
+        }
+
+        _isSubmitting = true;
+
+        try
+        {
+            await SubscriptionApiClient.AddSubscriptionAsync(_formModel.Url);
+            _formModel.Url = string.Empty;
+            await LoadSubscriptionsAsync();
+        }
+        catch (Exception ex)
+        {
+            _errorMessage = ex.Message;
+        }
+        finally
+        {
+            _isSubmitting = false;
+        }
+    }
+
+    private async Task LoadSubscriptionsAsync()
+    {
+        _subscriptions.Clear();
+        var subscriptions = await SubscriptionApiClient.GetSubscriptionsAsync();
+
+        foreach (var subscription in subscriptions)
+        {
+            _subscriptions.Add(subscription);
+        }
+    }
+
+    private sealed class FormModel
+    {
+        public string Url { get; set; } = string.Empty;
+    }
+}

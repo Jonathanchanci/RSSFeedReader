@@ -22,10 +22,10 @@ description: "Task list for RSS subscription management"
 
 **Purpose**: Scaffold the API, UI, and test projects using the .NET 8 toolchain.
 
-- [ ] T001 [P] Create `RSSFeedReader.sln` and scaffold the ASP.NET Core Web API project targeting `net8.0` in `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`.
-- [ ] T002 [P] Scaffold the standalone Blazor WebAssembly project targeting `net8.0` in `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj`.
-- [ ] T003 Add `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj` to `RSSFeedReader.sln`.
-- [ ] T004 Create the xUnit test project in `backend/RSSFeedReader.Api.Tests/RSSFeedReader.Api.Tests.csproj`, reference `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`, and add it to `RSSFeedReader.sln`.
+- [X] T001 [P] Create `RSSFeedReader.sln` and scaffold the ASP.NET Core Web API project targeting `net8.0` in `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`.
+- [X] T002 [P] Scaffold the standalone Blazor WebAssembly project targeting `net8.0` in `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj`.
+- [X] T003 Add `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj` to `RSSFeedReader.sln`.
+- [X] T004 Create the xUnit test project in `backend/RSSFeedReader.Api.Tests/RSSFeedReader.Api.Tests.csproj`, reference `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`, and add it to `RSSFeedReader.sln`.
 
 ---
 
@@ -33,8 +33,8 @@ description: "Task list for RSS subscription management"
 
 **Purpose**: Remove template routing conflicts and establish the local API/UI connection before feature implementation.
 
-- [ ] T005 Remove the Blazor demo pages `frontend/RSSFeedReader.UI/Pages/Home.razor`, `frontend/RSSFeedReader.UI/Pages/Counter.razor`, and `frontend/RSSFeedReader.UI/Pages/Weather.razor`; update `frontend/RSSFeedReader.UI/Layout/NavMenu.razor` to remove links to deleted pages and retain only MVP navigation, then verify that only the intended page uses `@page "/"`.
-- [ ] T006 Configure the API launch URL as `http://localhost:5151` in `backend/RSSFeedReader.Api/Properties/launchSettings.json`, the UI launch URL as `http://localhost:5213` in `frontend/RSSFeedReader.UI/Properties/launchSettings.json`, the API base URL in `frontend/RSSFeedReader.UI/wwwroot/appsettings.json`, and API CORS origins in `backend/RSSFeedReader.Api/Program.cs` to allow the configured UI origin.
+- [X] T005 Remove the Blazor demo pages `frontend/RSSFeedReader.UI/Pages/Home.razor`, `frontend/RSSFeedReader.UI/Pages/Counter.razor`, and `frontend/RSSFeedReader.UI/Pages/Weather.razor`; update `frontend/RSSFeedReader.UI/Layout/NavMenu.razor` to remove links to deleted pages and retain only MVP navigation, then verify that only the intended page uses `@page "/"`.
+- [X] T006 Configure the API launch URL as `http://localhost:5151` in `backend/RSSFeedReader.Api/Properties/launchSettings.json`, the UI launch URL as `http://localhost:5213` in `frontend/RSSFeedReader.UI/Properties/launchSettings.json`, the API base URL in `frontend/RSSFeedReader.UI/wwwroot/appsettings.json`, and API CORS origins in `backend/RSSFeedReader.Api/Program.cs` to allow the configured UI origin.
 
 **Checkpoint**: Both projects build, template routes do not conflict, and the configured UI origin can call the API.
 
@@ -48,15 +48,15 @@ description: "Task list for RSS subscription management"
 
 ### Tests for User Story 1
 
-- [ ] T007 [US1] Add API integration tests in `backend/RSSFeedReader.Api.Tests/SubscriptionsEndpointTests.cs` for empty-list retrieval, successful add and retrieval, exact URL preservation, duplicate entries, blank-input `400` with no mutation, and an empty collection after a fresh API process starts; ensure these tests fail before implementing the endpoints.
+- [X] T007 [US1] Add API integration tests in `backend/RSSFeedReader.Api.Tests/SubscriptionsEndpointTests.cs` for empty-list retrieval, successful add and retrieval, exact URL preservation, duplicate entries, blank-input `400` with no mutation, and an empty collection after a fresh API process starts; ensure these tests fail before implementing the endpoints.
 
 ### Implementation for User Story 1
 
-- [ ] T008 [US1] Create the `Subscription` response/request model with its `Url` field in `backend/RSSFeedReader.Api/Models/Subscription.cs`.
-- [ ] T009 [US1] Implement an insertion-ordered in-memory subscription store that rejects null, empty, and whitespace-only values while preserving every other URL exactly and allowing duplicates in `backend/RSSFeedReader.Api/Services/SubscriptionStore.cs`.
-- [ ] T010 [US1] Implement `GET /api/subscriptions` and `POST /api/subscriptions` in `backend/RSSFeedReader.Api/Endpoints/SubscriptionsEndpoints.cs` and map the endpoint group from `backend/RSSFeedReader.Api/Program.cs`; return the ordered array for GET, the created subscription with `200 OK` for POST, and `400 Bad Request` for blank input without mutating state. Do not validate, fetch, or parse feed URLs.
-- [ ] T011 [US1] Implement and register a Blazor API client that calls the configured `/api/subscriptions` endpoint using `HttpClient` and JSON in `frontend/RSSFeedReader.UI/Services/SubscriptionApiClient.cs` and `frontend/RSSFeedReader.UI/Program.cs`.
-- [ ] T012 [US1] Implement the root subscriptions page in `frontend/RSSFeedReader.UI/Pages/Subscriptions.razor` with URL entry, blank-input handling, API-backed list loading, and immediate list refresh after add; display submitted text as-is and retain duplicates.
+- [X] T008 [US1] Create the `Subscription` response/request model with its `Url` field in `backend/RSSFeedReader.Api/Models/Subscription.cs`.
+- [X] T009 [US1] Implement an insertion-ordered in-memory subscription store that rejects null, empty, and whitespace-only values while preserving every other URL exactly and allowing duplicates in `backend/RSSFeedReader.Api/Services/SubscriptionStore.cs`.
+- [X] T010 [US1] Implement `GET /api/subscriptions` and `POST /api/subscriptions` in `backend/RSSFeedReader.Api/Endpoints/SubscriptionsEndpoints.cs` and map the endpoint group from `backend/RSSFeedReader.Api/Program.cs`; return the ordered array for GET, the created subscription with `200 OK` for POST, and `400 Bad Request` for blank input without mutating state. Do not validate, fetch, or parse feed URLs.
+- [X] T011 [US1] Implement and register a Blazor API client that calls the configured `/api/subscriptions` endpoint using `HttpClient` and JSON in `frontend/RSSFeedReader.UI/Services/SubscriptionApiClient.cs` and `frontend/RSSFeedReader.UI/Program.cs`.
+- [X] T012 [US1] Implement the root subscriptions page in `frontend/RSSFeedReader.UI/Pages/Subscriptions.razor` with URL entry, blank-input handling, API-backed list loading, and immediate list refresh after add; display submitted text as-is and retain duplicates.
 
 **Checkpoint**: User Story 1 is independently functional through the UI and API, with the required behavior covered by API integration tests.
 
@@ -66,7 +66,7 @@ description: "Task list for RSS subscription management"
 
 **Purpose**: Verify the delivered workflow and local configuration against the feature quickstart.
 
-- [ ] T013 Run the API test suite and build the API and UI projects from `backend/RSSFeedReader.Api.Tests/RSSFeedReader.Api.Tests.csproj`, `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`, and `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj`; complete the manual add/list/duplicate/blank-input/API-restart checks in `specs/001-rss-subscriptions/quickstart.md`.
+- [X] T013 Run the API test suite and build the API and UI projects from `backend/RSSFeedReader.Api.Tests/RSSFeedReader.Api.Tests.csproj`, `backend/RSSFeedReader.Api/RSSFeedReader.Api.csproj`, and `frontend/RSSFeedReader.UI/RSSFeedReader.UI.csproj`; complete the manual add/list/duplicate/blank-input/API-restart checks in `specs/001-rss-subscriptions/quickstart.md`.
 
 ---
 
