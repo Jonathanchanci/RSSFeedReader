@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: RSS Subscription API
+  version: 1.0.0
+  description: In-memory subscription management only; feed URLs are not fetched or validated.
+servers:
+  - url: http://localhost:5151/api
+paths:
+  /subscriptions:
+    get:
+      summary: List subscriptions
+      operationId: listSubscriptions
+      responses:
+        '200':
+          description: Subscriptions in insertion order. An empty list is returned when none have been added in this API process.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subscription'
+    post:
+      summary: Add a subscription
+      operationId: addSubscription
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+      responses:
+        '200':
+          description: The subscription was added, including if an equal URL already exists.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        '400':
+          description: The URL is null, empty, or whitespace-only. The collection is unchanged.
+components:
+  schemas:
+    Subscription:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          description: Submitted text preserved exactly; only null, empty, and whitespace-only values are rejected. No URI or feed validation occurs.
