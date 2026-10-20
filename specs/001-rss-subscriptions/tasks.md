@@ -111,3 +111,7 @@ The feature contains one user story, so there are no later story increments. Kee
 - `[P]` marks only independent tasks targeting separate project files.
 - Preserve URL text exactly except that null, empty, and whitespace-only submissions are rejected.
 - The API process lifetime defines the in-memory subscription session; closing only the browser tab does not clear API state.
+
+## Phase 5: Convergence
+
+- [X] T014 Review the template About link and remove it if not explicitly required in `frontend/RSSFeedReader.UI/Layout/MainLayout.razor` per Constitution II (unrequested).

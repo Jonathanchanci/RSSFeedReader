@@ -4,7 +4,16 @@
   "branch": "001-rss-subscriptions",
   "selectedAt": "2026-10-17T19:40:18.507Z",
   "currentStep": "specify",
-  "status": "draft",
-  "history": [],
-  "telemetryInstanceId": "afdf2f11-8a21-4214-9ea3-11eeb264be9f"
+  "status": "completed",
+  "history": [
+    {
+      "step": "specify",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-10-20T03:08:24.635Z"
+    }
+  ],
+  "telemetryInstanceId": "afdf2f11-8a21-4214-9ea3-11eeb264be9f",
+  "assistant": "ide-chat"
 }
